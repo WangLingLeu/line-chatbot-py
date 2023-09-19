@@ -29,7 +29,7 @@ def handle_message(event):
     if re.match("你是誰", message):
         line_bot_api.reply_message(event.reply_token,TextSendMessage("皮~~卡稱!!!"))
     elif re.match("使用者", message):
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(line_bot_api.get_profile()))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(event.source.user_id))
     else:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
     
