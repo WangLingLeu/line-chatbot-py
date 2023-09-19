@@ -27,6 +27,7 @@ import re
 def handle_message(event):
     message = event.message.text
     if re.match("你是誰", message):
+        line_bot_api.reply_message(event.reply_token,TextSendMessage("我是"))
         line_bot_api.reply_message(event.reply_token,TextSendMessage("皮~~卡稱!!!"))
     else:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
